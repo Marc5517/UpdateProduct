@@ -12,16 +12,34 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-  <title>Hello app</title>
+  <title>Update product</title>
 </head>
 
+<style>
+  body {
+    background-color: lightblue;
+  }
+</style>
+
 <body>
-  <h1>Hello</h1>
-  <div id="app">
-    <input v-model="name" placeholder="Name">
-    <button v-on:click="sayHello()" class="btn btn-primary">Say hello</button>
-    <div>{{ greeting }}</div>
+  <div class="jumbotron jumbotron-fluid" style="color: white; background-color: rgb(28, 16, 190);">
+    <div class="container">
+      <h1><strong>eKunder</strong></h1>
+      <p>Opdatering af varer med serienummer</p>
+    </div>
   </div>
+  <div id="app">
+    <h2 style="margin: 25px 20px 25px 320px;">Opdater serienummer til varen</h2>
+    <input v-model.number="updateData.productId" placeholder="Vare ID" type="number" />
+    <input v-model.number="updateData.productNr" placeholder="Productnummer" type="number" />
+    <input v-model.number="updateData.customerNr" placeholder="Kundenummer" type="number" />
+    <input v-model.number="updateData.invoiceNr" placeholder="Kvitteringsnummer" type="number" />
+    <input v-model="updateData.serialNr" placeholder="Serienummer" type="text" />
+    <button v-on:click="updateProduct()" class="btn btn-success">Opdater</button>
+    <div>{{updateMessage}}</div>
+  </div>
+
+  <Button onclick="document.location= 'https://ecustomer.azurewebsites.net/'" class="btn btn-success">Info</button>
 
   <script src="bundle.js"></script>
 </body>
