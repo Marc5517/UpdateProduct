@@ -23,6 +23,7 @@ new Vue({
         updateData: { productId: "", productNr: "", customerNr: "", invoiceNr: "", serialNr: ""},
         updateMessage: "",
     },
+    // Når data fra en anden HTML-side bliver transporteret til dette program, så bliver kun det der nævnes nedenunder tilføjet til et felt på HTML-siden.
     created() {
         let params = new URLSearchParams(location.search);
         this.updateData.productId = params.get('productId')
@@ -31,6 +32,7 @@ new Vue({
         this.updateData.invoiceNr = params.get('invoiceNr')
     },
     methods: {
+        // Opdatere en vare til databasen, så længe den bruger URL'en og varens ID.
         updateProduct() {
             let url: string = baseUrl + "/" + this.updateData.productId
             axios.put<IProduct>(url, this.updateData)
