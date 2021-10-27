@@ -11,6 +11,7 @@ interface IProduct {
     serialNr: string
 }
 
+// 2021-10-27: Denne skaber forbindelse til URL'en til restapi'en med databasen
 let baseUrl: string = "https://customerrestservice.azurewebsites.net/api/Products"
 
 
