@@ -35,10 +35,12 @@
     <input v-model.number="updateData.customerNr" placeholder="Kundenummer" type="number" />
     <input v-model.number="updateData.invoiceNr" placeholder="Kvitteringsnummer" type="number" />
     <input v-model="updateData.serialNr" placeholder="Serienummer" type="text" />
+    <!--2021-10-27 Knappen her opdatere et produkt-->
     <button v-on:click="updateProduct()" class="btn btn-success">Opdater</button>
     <div>{{updateMessage}}</div>
   </div>
 
+  <!--2021-10-27 Knappen her skifter over til hovedsiden-->
   <Button onclick="document.location= 'https://ecustomer.azurewebsites.net/'" class="btn btn-success">Info</button>
 
   <script src="bundle.js"></script>
